@@ -1,0 +1,178 @@
+/* NB : LES STYLES QUI SONT GENERIQUES, ONT LES METS TOUJOURS EN HAUT DU FICHIER, ET LES STYLES QUI SONT IMPEU SPECIFIQUES, ILS FAUT LES METTRE EN BAS*/
+/* Pour gerer le Overflow sur l'affichage, et demander qu'il readapte le contenu de notre pages en fonction de l'affichage*/
+*{
+    overflow: auto;
+}
+ 
+ 
+ /*Ajouter la couleur de font et la Police au corps de notre page*/
+ body {
+     background-color: #8BA1BB;
+     font-family: Arial;
+     margin: 0;
+ }
+ 
+ /*Ajouter la couleur de font et la couleur du texte au a tout aux paragraphes  qui ont la class categorie , et egalement aux titre de niveau 2 (h2) */
+ p.categorie {
+     background-color: #000000;
+     color: white;
+     display: inline-block;        /* display: block, Permet d'occuper toute la ligne, et display: inline;permet d'occuper uniquement la place necessaire et autoriser les autres element de s'afficher par derriere. Pour avoir plus d'options sur la display on peut faire le Ctrl + espace dans le visual Studio*/
+     margin-top: -15px;
+     padding: 20px;
+     margin-bottom: 0px;
+     font-weight: bold;      /* Pour mettre le texte en gras*/
+     font-size: 16px;        /* Pour la taille de la police*/
+     
+
+ }
+
+ /*Ajouter la couleur de font et les marge du texte au au elements de <div>  qui ont la class contenu , et egalement aux titre de niveau 2 (h2) */
+ div.contenu {
+     background-color: white;
+     margin : 60px 10% 80px 10%; /*on definit la mage haut = 60 px(les marge ici sont fixe), droit = 10%(les marge ici sont s'adapte en fonction de la taille de l'ecran) bas=80px(les marge ici sont fixe) et gauche=10%(les marge ici sont s'adapte en fonction de la taille de l'ecran). C'est comme un cercle. */
+     padding: 0px 30px 30px 30px;
+     min-width: 350px;             /*Pour resoudre le probleme d'affichage (largeuer minimale)*/
+     box-shadow: 0px 0px 8px 8px rgba(0,0,0,0.1);   /* Pour ajouter de l'ombre sur notre  box*/
+     overflow: visible;     /* Pour voir le depassement entre la div contenu et la div categorie*/
+    }
+
+ /* On align et donne les marges de a notre  titre de niveau 1 (h1) */
+ h1 {
+     text-align: center;
+     margin-bottom:12px;
+     margin-top:10px
+ }
+
+ /* On align aussi la description de notre titre */
+ p.description {
+     text-align: center;
+     max-width: 400px;   /* Pour limiter la largeure maximale de notre description de tel sort que meme si on agrandit l'onglet, alors qu'il conservse son meme design de base*/
+     display: inline-block;
+     font-size: 14px;        /*Pour definir la taille de la police de notre description*/
+ }
+
+ /* On centre tous nos contenus qui a pour class centre*/
+ .centre {
+     text-align: center;
+     width: 100%;        /* Pour dire que le contenu centré prend toute la taille de fenetre */
+ }
+ 
+ /* On met le pied de page a notre div */
+ div.categorie {
+     margin-bottom: 0px;
+     margin-top: 0px;
+     overflow: visible;
+ }
+ 
+ /* On met les caracteristique de notre separateur */
+ div.separateur {
+     width: 100px;
+     height: 1px;
+     background-color: black;
+     margin-left: auto;
+     margin-right: auto;
+ }
+ /* Pour positionner notre l'image en arriere plan-*/
+ div.info{
+     position:relative; 
+ }
+
+ /* Pour positionner la table au dessus de l'image-*/
+ table.info{
+     position:absolute; 
+     bottom:0px; 
+     width: 100%; 
+     color: white; 
+     background-color: #6C829DC0;  /*Pour gerer l'opacite sur une couleur on peut utiliser le FF(100% opaque), OO(pour le 100% transparent) ou C0(ou 80) qui est la moyenne. Exemple : #6C829DC0*/
+ }
+
+ /* Pour centrer le td de notre tableau et aligner le contenu vers le haut -*/
+ table.info td{
+     text-align: center;
+     font-size: 14px;
+     vertical-align: top;
+ }
+
+ /* Pour reduire impeu la taille des th de notre tableau et aligner le contenu vers le bas, et mettre la marge du pied de page-*/
+ table.info th{
+     font-size: 16px;
+     vertical-align: bottom;
+     padding-bottom: 8px;
+ }
+
+ /* Pour mettre les propriete sur notre image*/
+ image.info {
+    display: block;            
+    max-height: 400px;          /* Pour limiter la hauteur de l'image */
+    object-fit: cover;          /* On dapate l'image en fonction de la fenetre*/
+    min-height: 200px;          /* On donne une taille taille minimale a notre image, ainsi, si le temps de chargement long alors on aura aumoins le symbole de l'image qui doit s'afficher en attendant que l'image charge normalement */
+    background-color:lightgray; /* On donne un fond a l'espace occupé par notre image en attendant que notre imagec charge. Alors on aura aumoins conserver le design de l'image qui doit s'afficher.*/
+ }
+
+ /* Pour creer les colonnes avec float et appliquer les propriete*/
+ div.colonne{
+    width: 45%;        /* Pour donner la larggeur de 40% de la premiere et la deuxieme colonne*/
+    margin-top: 20px;   /* Pour mettre la marge a nos deux colonnes*/
+ }
+
+ div.colonne1{
+     display: inline-block;     /* Pour limiter la place que prend la colonne 1*/
+
+ }
+
+ div.colonne2{
+     float: right;      /* Pour afficher la deuxieme colonne a droite*/
+}
+
+/* Pour selectionner directement les titres de nos deux colonnes*/
+div.colonne h2{
+    text-align: center;
+    text-transform: uppercase;      /* pour transformer notre texte en majuscule*/
+    font-size: 15px;
+    border-bottom: 5px solid #6C829DC0;                   /* Pour mettre la bordure en bas des titres de nos deux colonnes*/
+    margin-right: 10px;                /*Pour mettre un espacement de 10px entre nos deux colonnes*/
+    padding-bottom: 5px;            /*Pour mettre une marge internes aux titres de nos colonnes*/
+}
+
+/* Mettre les proprietes sur les paragraphe des ingredients*/
+div.ingredients p{
+    text-align: center;
+    font-size: 14px;
+    border: 1px solid lightgray;
+    padding: 8px 0;
+    margin-top: 4px;
+    margin-bottom: 0;
+
+}
+
+/* Mettre les proprietes sur les paragrapphe de la table de preparation*/
+table.preparation p.numero{
+    background-color: #6C829DC0;
+    color: white;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;      /*Pour mettre le texte en gras*/
+    padding-top: 4px;       /*Pour mettre une marge internes aux contenu de notre table*/
+    box-sizing: border-box; /* Pour calculer la taille du padding d'une maniere differente et de garder la taille du padding precedent */
+    border-radius: 50%;     /*Pour arrondir les bordures*/
+    margin: 0px;
+}
+
+/* On alligne le contenu de notre td de la table de preparation vers le haut*/
+table.preparation td{
+    vertical-align: top;
+}
+
+/* Mettre les proprietes sur les td de la table qui ont pour class preparation_etape*/
+table.preparation td.preparation_etape{
+    font-size: 14px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+/* Mettre les proprietes sur les tr de la table qui ont pour eviter que le texte prend sur un ou deux ligne en fonction de la fenetre*/
+table.preparation tr{
+    height: 40px;
+}
