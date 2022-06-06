@@ -26,16 +26,17 @@
 
  }
 
- /*Ajouter la couleur de font et les marge du texte au au elements de <div>  qui ont la class contenu , et egalement aux titre de niveau 2 (h2) */
+ /* Style pour mobiles*/
  div.contenu {
      background-color: white;
-     margin : 60px 10% 80px 10%; /*on definit la mage haut = 60 px(les marge ici sont fixe), droit = 10%(les marge ici sont s'adapte en fonction de la taille de l'ecran) bas=80px(les marge ici sont fixe) et gauche=10%(les marge ici sont s'adapte en fonction de la taille de l'ecran). C'est comme un cercle. */
-     padding: 0px 30px 30px 30px;
-     min-width: 350px;             /*Pour resoudre le probleme d'affichage (largeuer minimale)*/
+     margin : 40px 8% 40px 8%; /*on definit la mage haut = 40 px(les marge ici sont fixe), droit = 8%(les marge ici sont s'adapte en fonction de la taille de l'ecran) bas=40px(les marge ici sont fixe) et gauche=8%(les marge ici sont s'adapte en fonction de la taille de l'ecran). C'est comme un cercle. */
+     padding: 0px 8px 20px 8px;
      box-shadow: 0px 0px 8px 8px rgba(0,0,0,0.1);   /* Pour ajouter de l'ombre sur notre  box*/
      overflow: visible;     /* Pour voir le depassement entre la div contenu et la div categorie*/
     }
 
+
+/*css reponsive media queries: pour ajouter les conditions a un style de notre fichier css : https://www.w3schools.com/css/css_rwd_mediaqueries.asp*/
  /* On align et donne les marges de a notre  titre de niveau 1 (h1) */
  h1 {
      text-align: center;
@@ -84,18 +85,19 @@
      width: 100%; 
      color: white; 
      background-color: #6C829DC0;  /*Pour gerer l'opacite sur une couleur on peut utiliser le FF(100% opaque), OO(pour le 100% transparent) ou C0(ou 80) qui est la moyenne. Exemple : #6C829DC0*/
+     height: 50px;
  }
 
  /* Pour centrer le td de notre tableau et aligner le contenu vers le haut -*/
  table.info td{
      text-align: center;
-     font-size: 14px;
+     font-size: 12px;
      vertical-align: top;
  }
 
  /* Pour reduire impeu la taille des th de notre tableau et aligner le contenu vers le bas, et mettre la marge du pied de page-*/
  table.info th{
-     font-size: 16px;
+     font-size: 14px;
      vertical-align: bottom;
      padding-bottom: 8px;
  }
@@ -111,7 +113,7 @@
 
  /* Pour creer les colonnes avec float et appliquer les propriete*/
  div.colonne{
-    width: 45%;        /* Pour donner la larggeur de 40% de la premiere et la deuxieme colonne*/
+    width: 100%;        /* Pour donner la larggeur de 100% de la colonne sur mobile*/
     margin-top: 20px;   /* Pour mettre la marge a nos deux colonnes*/
  }
 
@@ -119,10 +121,6 @@
      display: inline-block;     /* Pour limiter la place que prend la colonne 1*/
 
  }
-
- div.colonne2{
-     float: right;      /* Pour afficher la deuxieme colonne a droite*/
-}
 
 /* Pour selectionner directement les titres de nos deux colonnes*/
 div.colonne h2{
@@ -175,4 +173,49 @@ table.preparation td.preparation_etape{
 /* Mettre les proprietes sur les tr de la table qui ont pour eviter que le texte prend sur un ou deux ligne en fonction de la fenetre*/
 table.preparation tr{
     height: 40px;
+}
+
+/* Style pour ordinateur: il s'agit d'une condition */
+@media only screen and (min-width: 768px) {
+    div.contenu {
+        margin : 60px 10% 80px 10%; /*on definit la mage haut = 60 px(les marge ici sont fixe), droit = 10%(les marge ici sont s'adapte en fonction de la taille de l'ecran) bas=80px(les marge ici sont fixe) et gauche=10%(les marge ici sont s'adapte en fonction de la taille de l'ecran). C'est comme un cercle. */
+        padding: 0px 30px 30px 30px;
+        min-width: 350px;             /*Pour resoudre le probleme d'affichage (largeuer minimale)*/
+        
+    }
+
+    /* Pour positionner adatpeter la table info sur le pc-*/
+    table.info {
+        height: 80px;
+    }
+
+    table.info td {
+        font-size: 14px;
+    }
+
+    table.info th {
+        font-size: 16px;
+    }
+    /* Pour creer les colonnes avec float et appliquer les propriete*/
+    div.colonne {
+        width: 45%;        /* Pour donner la larggeur de 40% de la premiere et la deuxieme colonne*/
+    }
+
+    div.colonne1 {
+        margin-right: 10%;
+
+    }
+
+    div.colonne2 {
+        float: right;      /* Pour afficher la deuxieme colonne a droite*/
+    }
+}
+
+/* Style pour un ecran très large: il s'agit d'une  autre condition */
+@media only screen and (min-width: 900px) {
+    div.contenu {
+        margin-left: auto;
+        margin-right: auto;
+        width: 645px;
+    }
 }
